@@ -3,8 +3,12 @@ var rpcClient = require('./lib/client');
 var axon = require('axon');
 var fs = require('fs');
 
+var timeout;
+
 function dump(constants, client, cb) {
   client.call('getMonitorData', {}, function(err, list) {
+    clearTimeout(timeout);
+
     if (err) {
       console.error('Error retrieving process list: ' + err);
       return cb({msg:err});
@@ -32,17 +36,16 @@ function dump(constants, client, cb) {
 exports.fallback = function fallback(constants, cb) {
   var req = axon.socket('req');
   var client = new rpcClient(req);
-  var t1;
 
   console.log('Launching update.....');
   client.sock.once('connect', function() {
-    t1 = setTimeout(function() {
+    timeout = setTimeout(function() {
       client.sock.close();
       cb({online : true, msg: 'Recent PM2 protocol (>0.10x) aborting dumping procedure'});
-    }, 4000);
+    }, 1500);
 
     dump(constants, client, function(err, data) {
-      clearTimeout(t1);
+
 
       client.call('killMe', {}, function() {
         setTimeout(function() {

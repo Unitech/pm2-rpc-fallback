@@ -1,6 +1,6 @@
 {
   "name": "pm2-rpc-fallback",
-  "version": "2.8.0",
+  "version": "2.8.1",
   "description": "PM2 RPC fallback for PM2 <= 0.9.6",
   "keywords": [],
   "author": {
