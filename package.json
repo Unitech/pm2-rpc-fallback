@@ -11,7 +11,6 @@
     "commander": "1.0.5",
     "debug": "*",
     "json-stringify-safe": "*",
-    "pm2": "^0.10.6",
     "pm2-axon": "2.0.2",
     "pm2-axon-rpc": "0.3.3"
   },
