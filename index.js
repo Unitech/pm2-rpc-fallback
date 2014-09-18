@@ -121,6 +121,7 @@ exports.fallback = function fallback(constants, cb) {
   console.log('[PM2] Looking for any upgrade procedures.');
 
   connectViaOldAxon(constants, function(msg) {
+
     if (msg.online == false && msg.version == '0.9') {
       console.log('[PM2] Old PM2 version < 0.9 has been dumped');
       // Old PM2 has been killed
@@ -133,6 +134,14 @@ exports.fallback = function fallback(constants, cb) {
         return cb(msg2);
       });
     }
+
+    if (msg.version == null && msg.online == false) {
+      console.log('[PM2] OK');
+      return cb({
+        online : true
+      });
+    }
+
 
 
     return false;
