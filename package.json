@@ -1,6 +1,6 @@
 {
   "name": "pm2-rpc-fallback",
-  "version": "2.9.0",
+  "version": "3.0.1",
   "description": "PM2 upgrade procedures",
   "keywords": [],
   "author": {
