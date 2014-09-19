@@ -103,6 +103,7 @@ function connectViaOldAxon(constants, cb) {
   });
 
   client.sock.once('reconnect attempt', function() {
+    console.log('[PM2] Not connectable via HTTP');
     return end({
       online : false,
       version : null,
