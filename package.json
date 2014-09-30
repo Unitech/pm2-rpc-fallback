@@ -1,6 +1,6 @@
 {
   "name": "pm2-rpc-fallback",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "description": "PM2 upgrade procedures",
   "keywords": [],
   "author": {
@@ -11,8 +11,8 @@
     "commander": "1.0.5",
     "debug": "*",
     "json-stringify-safe": "*",
-    "pm2-axon": "2.0.2",
-    "pm2-axon-rpc": "0.3.3"
+    "pm2-axon": "2.0.5",
+    "pm2-axon-rpc": "0.3.5"
   },
   "devDependencies": {
     "better-assert": "*",
